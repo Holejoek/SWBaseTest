@@ -47,7 +47,9 @@ open class BaseTarget<T1: Encodable, T2: Decodable>: TargetType {
     
     open func request() {
         print("Начало запроса")
-        let provider = MoyaProvider<Self>(plugins: [NetworkLoggerPlugin(verbose: true)])
+        let plugin = NetworkLoggerPlugin()
+        plugin.isVerbose = true
+        let provider = MoyaProvider<Self>(plugins: [plugin])
         API.provider = provider
         
         if model.showLoader {
