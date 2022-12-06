@@ -28,8 +28,6 @@
 		359BB7D5293F468E007C8451 /* ImageScreenLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359BB7A3293F468D007C8451 /* ImageScreenLocalization.swift */; };
 		359BB7D6293F468E007C8451 /* ImageScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359BB7A5293F468D007C8451 /* ImageScreenRouter.swift */; };
 		359BB7D7293F468E007C8451 /* ExampleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359BB7A6293F468D007C8451 /* ExampleLoader.swift */; };
-		359BB7D8293F468E007C8451 /* OkDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359BB7A8293F468D007C8451 /* OkDialog.swift */; };
-		359BB7D9293F468E007C8451 /* YesNoDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359BB7A9293F468D007C8451 /* YesNoDialog.swift */; };
 		35BCB14C293F7D0E005669E7 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCB14B293F7D0E005669E7 /* BaseButton.swift */; };
 		35BCB14F293F7D23005669E7 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCB14D293F7D23005669E7 /* HeaderViewController.swift */; };
 		35BCB150293F7D23005669E7 /* CollectionWithPagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCB14E293F7D23005669E7 /* CollectionWithPagination.swift */; };
@@ -78,6 +76,8 @@
 		35BCB1B4293F7D95005669E7 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCB1AB293F7D95005669E7 /* NSObject+Extensions.swift */; };
 		35BCB1B5293F7D95005669E7 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCB1AC293F7D95005669E7 /* UILabel+Extensions.swift */; };
 		35BCB1B6293F7D95005669E7 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCB1AD293F7D95005669E7 /* UITextField+Extensions.swift */; };
+		35BCB1BA293F8091005669E7 /* OkDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCB1B8293F8091005669E7 /* OkDialog.swift */; };
+		35BCB1BB293F8091005669E7 /* YesNoDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCB1B9293F8091005669E7 /* YesNoDialog.swift */; };
 		545935F70C12EEE37A54F1DA /* Pods_SWBaseTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66733E9BD98A2A78720D143A /* Pods_SWBaseTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,8 +104,6 @@
 		359BB7A3293F468D007C8451 /* ImageScreenLocalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScreenLocalization.swift; sourceTree = "<group>"; };
 		359BB7A5293F468D007C8451 /* ImageScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScreenRouter.swift; sourceTree = "<group>"; };
 		359BB7A6293F468D007C8451 /* ExampleLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleLoader.swift; sourceTree = "<group>"; };
-		359BB7A8293F468D007C8451 /* OkDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OkDialog.swift; sourceTree = "<group>"; };
-		359BB7A9293F468D007C8451 /* YesNoDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesNoDialog.swift; sourceTree = "<group>"; };
 		35BCB14B293F7D0E005669E7 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		35BCB14D293F7D23005669E7 /* HeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		35BCB14E293F7D23005669E7 /* CollectionWithPagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionWithPagination.swift; sourceTree = "<group>"; };
@@ -154,6 +152,8 @@
 		35BCB1AB293F7D95005669E7 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		35BCB1AC293F7D95005669E7 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		35BCB1AD293F7D95005669E7 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		35BCB1B8293F8091005669E7 /* OkDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OkDialog.swift; sourceTree = "<group>"; };
+		35BCB1B9293F8091005669E7 /* YesNoDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesNoDialog.swift; sourceTree = "<group>"; };
 		3BF1DABA8C88AD2EF8F23B75 /* Pods-SWBaseTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SWBaseTest.debug.xcconfig"; path = "Target Support Files/Pods-SWBaseTest/Pods-SWBaseTest.debug.xcconfig"; sourceTree = "<group>"; };
 		66733E9BD98A2A78720D143A /* Pods_SWBaseTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SWBaseTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2E29264D20F0A2B7E14D66 /* Pods-SWBaseTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SWBaseTest.release.xcconfig"; path = "Target Support Files/Pods-SWBaseTest/Pods-SWBaseTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +213,7 @@
 		359BB77D293F45D5007C8451 /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
+				35BCB1B7293F8091005669E7 /* Dialogs */,
 				35BCB14E293F7D23005669E7 /* CollectionWithPagination.swift */,
 				35BCB14D293F7D23005669E7 /* HeaderViewController.swift */,
 				35BCB14B293F7D0E005669E7 /* BaseButton.swift */,
@@ -231,7 +232,6 @@
 				359BB78D293F468D007C8451 /* MaskedTextFieldWithTitle.swift */,
 				359BB78F293F468D007C8451 /* ImageScreen */,
 				359BB7A6293F468D007C8451 /* ExampleLoader.swift */,
-				359BB7A7293F468D007C8451 /* Dialogs */,
 			);
 			name = "Custom views";
 			path = "../../../../../Downloads/Start/Start/Custom views";
@@ -320,15 +320,6 @@
 				359BB7A5293F468D007C8451 /* ImageScreenRouter.swift */,
 			);
 			path = Router;
-			sourceTree = "<group>";
-		};
-		359BB7A7293F468D007C8451 /* Dialogs */ = {
-			isa = PBXGroup;
-			children = (
-				359BB7A8293F468D007C8451 /* OkDialog.swift */,
-				359BB7A9293F468D007C8451 /* YesNoDialog.swift */,
-			);
-			path = Dialogs;
 			sourceTree = "<group>";
 		};
 		35BCB151293F7D43005669E7 /* Architecture */ = {
@@ -469,6 +460,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		35BCB1B7293F8091005669E7 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				35BCB1B8293F8091005669E7 /* OkDialog.swift */,
+				35BCB1B9293F8091005669E7 /* YesNoDialog.swift */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
 		4BAEC6F3F9689D848A2EAFFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -597,7 +597,6 @@
 				35BCB18F293F7D44005669E7 /* LoaderViewProtocol.swift in Sources */,
 				35BCB1AE293F7D95005669E7 /* UIImageView+extensions.swift in Sources */,
 				35BCB18A293F7D44005669E7 /* AppearanceFonts.swift in Sources */,
-				359BB7D9293F468E007C8451 /* YesNoDialog.swift in Sources */,
 				35BCB197293F7D44005669E7 /* NavigationProtocol.swift in Sources */,
 				359BB7C9293F468E007C8451 /* ImageScreenAssembly.swift in Sources */,
 				35BCB18B293F7D44005669E7 /* Appearance.swift in Sources */,
@@ -631,12 +630,13 @@
 				35BCB1A2293F7D76005669E7 /* PlistManager.swift in Sources */,
 				35BCB17E293F7D43005669E7 /* BaseNetworkModels.swift in Sources */,
 				35BCB1A1293F7D76005669E7 /* BlueToothManager.swift in Sources */,
-				359BB7D8293F468E007C8451 /* OkDialog.swift in Sources */,
 				35BCB14C293F7D0E005669E7 /* BaseButton.swift in Sources */,
 				359BB7C7293F468E007C8451 /* MaskedTextFieldWithTitle.swift in Sources */,
+				35BCB1BB293F8091005669E7 /* YesNoDialog.swift in Sources */,
 				35BCB181293F7D43005669E7 /* RequestModel.swift in Sources */,
 				359BB7D1293F468E007C8451 /* ImageScreenInteractor.swift in Sources */,
 				359BB7CC293F468E007C8451 /* ImageScreenNetwork.swift in Sources */,
+				35BCB1BA293F8091005669E7 /* OkDialog.swift in Sources */,
 				359BB7D6293F468E007C8451 /* ImageScreenRouter.swift in Sources */,
 				35BCB186293F7D43005669E7 /* BaseViewController.swift in Sources */,
 				359BB7D0293F468E007C8451 /* ImageScreenData.swift in Sources */,

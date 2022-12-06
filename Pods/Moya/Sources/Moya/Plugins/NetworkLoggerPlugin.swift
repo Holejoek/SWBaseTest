@@ -2,7 +2,7 @@ import Foundation
 import Result
 
 /// Logs network activity (outgoing requests and incoming responses).
-public final class NetworkLoggerPlugin: PluginType {
+open class NetworkLoggerPlugin: PluginType {
     fileprivate let loggerId = "Moya_Logger"
     fileprivate let dateFormatString = "dd/MM/yyyy HH:mm:ss"
     fileprivate let dateFormatter = DateFormatter()
@@ -14,7 +14,7 @@ public final class NetworkLoggerPlugin: PluginType {
     fileprivate let responseDataFormatter: ((Data) -> (Data))?
 
     /// A Boolean value determing whether response body data should be logged.
-    public let isVerbose: Bool
+    open var isVerbose = false
     public let cURL: Bool
 
     /// Initializes a NetworkLoggerPlugin.
@@ -26,7 +26,7 @@ public final class NetworkLoggerPlugin: PluginType {
         self.responseDataFormatter = responseDataFormatter
     }
 
-    public func willSend(_ request: RequestType, target: TargetType) {
+    open func willSend(_ request: RequestType, target: TargetType) {
         if let request = request as? CustomDebugStringConvertible, cURL {
             output(separator, terminator, request.debugDescription)
             return
@@ -34,7 +34,7 @@ public final class NetworkLoggerPlugin: PluginType {
         outputItems(logNetworkRequest(request.request as URLRequest?))
     }
 
-    public func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
+    open func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
         if case .success(let response) = result {
             outputItems(logNetworkResponse(response.response, data: response.data, target: target))
         } else {
