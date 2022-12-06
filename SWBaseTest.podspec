@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'SWBaseTest'
-  s.version = '1.0.6'
+  s.version = '1.0.7'
   s.license = 'MIT'
   s.summary = 'Test framework'
   s.homepage = 'https://github.com/Holejoek/SWBaseTest'
