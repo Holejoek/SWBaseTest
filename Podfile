@@ -8,5 +8,7 @@ target 'SWBaseTest' do
   # Pods for SWBaseTest
   pod 'Moya', '~> 13.0'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'KeychainAccess'
+  pod 'Kingfisher'
 
 end
