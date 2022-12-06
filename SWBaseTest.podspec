@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.authors = { 'Ivan Timinskiy' => 'Eggman12363@gmail.com' }
   
   s.source = { :git => 'https://github.com/Holejoek/SWBaseTest', :tag => s.version.to_s }
-  s.source_files = 'Sources/*.swift'
+  s.source_files  = 'Sources/*.{h,m}'
   s.swift_version = '5.0'
   s.platform = :ios, '13.0'
 
