@@ -48,7 +48,7 @@ final public class StorageManager {
     
     private init() {}
     
-    static var shared: StorageManager {
+    static public var shared: StorageManager {
         if uniqueInstance == nil {
             uniqueInstance = StorageManager()
         }
