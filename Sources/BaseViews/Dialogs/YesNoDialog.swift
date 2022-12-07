@@ -9,7 +9,7 @@ import UIKit
 //Пример кастомного диалога
  open class YesNoDialog: UIView {
     
-    lazy var messageLabel: UILabel = {
+    lazy public var messageLabel: UILabel = {
         let view = UILabel()
         view.textColor = appearance.colors.dark_main
         view.textAlignment = .center
@@ -18,8 +18,8 @@ import UIKit
         view.font = appearance.fonts.regularButtonFontExample
         return view
     }()
-    var shadow: UIView?
-    lazy var yesButton: BaseButton = {
+     public var shadow: UIView?
+    lazy public var yesButton: BaseButton = {
         let view = BaseButton()
         view.text = "Да"
         view.layer.borderWidth = 2
@@ -34,7 +34,7 @@ import UIKit
         return view
     }()
 
-    lazy var noButton: BaseButton = {
+    lazy public var noButton: BaseButton = {
         let view = BaseButton()
         view.text = "Нет"
         view.onTap = {
@@ -45,7 +45,7 @@ import UIKit
         return view
     }()
     
-    var text: String? {
+     public var text: String? {
         get {
             return self.messageLabel.text
         }
@@ -55,8 +55,8 @@ import UIKit
         }
     }
 
-    var yesTap: (()->())?
-    var noTap: (()->())?
+     public var yesTap: (()->())?
+     public var noTap: (()->())?
     
     open func remove(){
         UIView.animate(withDuration: 0.1, animations:  {

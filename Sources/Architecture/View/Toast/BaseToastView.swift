@@ -10,11 +10,11 @@ import UIKit
 
 final public class BaseToastView: UIView {
     
-    var swipeLeft: (() -> ())?
-    var swipeRight: (() -> ())?
-    var onTap: (() -> ())?
+    public var swipeLeft: (() -> ())?
+    public var swipeRight: (() -> ())?
+    public var onTap: (() -> ())?
     
-    lazy var messageLabel: UILabel = {
+    lazy public var messageLabel: UILabel = {
         let view = UILabel()
         view.textColor = .white
         view.textAlignment = .center
@@ -24,7 +24,7 @@ final public class BaseToastView: UIView {
         return view
     }()
 
-    var text: String? {
+    public var text: String? {
         get {
             return self.messageLabel.text
         }
@@ -34,7 +34,7 @@ final public class BaseToastView: UIView {
         }
     }
     
-    lazy var gestureView: UIView = {
+    lazy public var gestureView: UIView = {
         let view = UIView()
         var swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(onSwipeLeft))
 
@@ -77,7 +77,7 @@ final public class BaseToastView: UIView {
     }
     
     
-    class Timings {
+    public class Timings {
         static let enter: TimeInterval = 0.2
         static let waiting: TimeInterval = 3
         static let exit: TimeInterval = 0.3

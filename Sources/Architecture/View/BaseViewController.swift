@@ -12,34 +12,34 @@ open class BaseViewController: UIViewController, BaseViewInput, NavigationProtoc
     
     public weak var loader: LoaderViewProtocol?
     
-    var firstTime: Bool = true
-    var keyboardSensitiveConstraints: KeyboardSensitiveConstraints!
-    var keyboardService: KeyboardService = KeyboardService()
+    public var firstTime: Bool = true
+    public var keyboardSensitiveConstraints: KeyboardSensitiveConstraints!
+    public var keyboardService: KeyboardService = KeyboardService()
     
     
-    var backBySwipe: Bool = false {
+    public var backBySwipe: Bool = false {
         didSet {
             navigationController?.interactivePopGestureRecognizer?.isEnabled = backBySwipe;
         }
     }
     
-    var dismissKeyboardOnTapAround: Bool = true {
+    public var dismissKeyboardOnTapAround: Bool = true {
         didSet{
             hideKeyboardWhenTappedAround(hide: dismissKeyboardOnTapAround)
         }
     }
     
-    var appearance: Appearance = Appearance.sharedInstance
-    var grayCover: UIView?
-    var fakeCover: UIView?
-    var fakeCoverTap: ((BaseViewController) -> ())?
-    lazy var header: HeaderViewController = HeaderViewController()
-    var pushAnimation: UIViewControllerAnimatedTransitioning?
-    var popAnimation: UIViewControllerAnimatedTransitioning?
-    let defaultNavigationBarHeight:CGFloat = 44
-    var tapToDismissKeyboard: UITapGestureRecognizer!
+    let appearance: Appearance = Appearance.sharedInstance
+    public var grayCover: UIView?
+    public var fakeCover: UIView?
+    public var fakeCoverTap: ((BaseViewController) -> ())?
+    lazy public var header: HeaderViewController = HeaderViewController()
+    public var pushAnimation: UIViewControllerAnimatedTransitioning?
+    public var popAnimation: UIViewControllerAnimatedTransitioning?
+    public let defaultNavigationBarHeight:CGFloat = 44
+    public var tapToDismissKeyboard: UITapGestureRecognizer!
     
-    var toast: BaseToastView!
+    public var toast: BaseToastView!
 
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -226,7 +226,7 @@ extension BaseViewController: UINavigationControllerDelegate {
     }
 }
 
-extension BaseViewController {
+public extension BaseViewController {
     func hideKeyboardWhenTappedAround(hide: Bool = true) {
         if hide {
             tapToDismissKeyboard.cancelsTouchesInView = false

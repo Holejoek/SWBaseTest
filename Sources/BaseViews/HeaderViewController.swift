@@ -16,7 +16,7 @@ open class HeaderViewController: UIView {
     private var leftButtons: [UIButton] = []
     private var rightButtons: [UIButton] = []
     
-    lazy var titleLabel: UILabel = {
+    lazy public var titleLabel: UILabel = {
         let view = UILabel()
         view.textAlignment = .center
         return view
@@ -40,7 +40,7 @@ open class HeaderViewController: UIView {
         return stack
     }()
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviews()
         addConstr()
@@ -52,7 +52,7 @@ open class HeaderViewController: UIView {
         addSubview(rightStack)
     }
     
-    var height: CGFloat = 0 {
+    public var height: CGFloat = 0 {
         didSet {
             snp.remakeConstraints{ make in
                 make.left.right.equalToSuperview()
@@ -62,13 +62,13 @@ open class HeaderViewController: UIView {
         }
     }
     
-    var title: String {
+    public var title: String {
         get { titleLabel.text ?? "" }
         set { titleLabel.text = newValue }
     }
     
     @discardableResult
-    func addButton(image: UIImage, type: ButtonAlignment, onTap: ((BaseButton)->())? = nil) -> BaseButton {
+    open func addButton(image: UIImage, type: ButtonAlignment, onTap: ((BaseButton)->())? = nil) -> BaseButton {
         
         let button = BaseButton()
         button.isHidden = false
@@ -108,7 +108,7 @@ open class HeaderViewController: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    enum ButtonAlignment {
+    public enum ButtonAlignment {
         case left, right
     }
     

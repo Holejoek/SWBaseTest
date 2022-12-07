@@ -10,7 +10,7 @@ import UIKit
 
 
 // MARK: - Работа с анимациями
-extension UIView {
+public extension UIView {
     
     private static let kRotationAnimationKey = "rotationanimationkey"
     

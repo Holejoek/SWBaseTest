@@ -9,9 +9,9 @@
 import UIKit
 
 //Пример кастомного диалога
-public class OkDialog: UIView {
+open class OkDialog: UIView {
     
-    lazy var messageLabel: UILabel = {
+    lazy public var messageLabel: UILabel = {
         let view = UILabel()
         view.textAlignment = .center
         view.numberOfLines = 0
@@ -19,8 +19,8 @@ public class OkDialog: UIView {
         view.font = appearance.fonts.regularButtonFontExample
         return view
     }()
-    var shadow: UIView?
-    lazy var okButton: BaseButton = {
+    public var shadow: UIView?
+    lazy public var okButton: BaseButton = {
         let view = BaseButton()
         view.text = "Ок"
         view.onTap = {
@@ -33,7 +33,7 @@ public class OkDialog: UIView {
     }()
 
     
-    var text: String? {
+    public var text: String? {
         get {
             return self.messageLabel.text
         }
@@ -43,7 +43,7 @@ public class OkDialog: UIView {
         }
     }
 
-    var okTap: (()->())?
+    public var okTap: (()->())?
     
     open func remove(){
         UIView.animate(withDuration: 0.1, animations:  {
@@ -78,7 +78,7 @@ public class OkDialog: UIView {
     }
 
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

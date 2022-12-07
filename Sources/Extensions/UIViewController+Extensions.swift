@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     
     class func controller() -> Self {
         let classReference = self.self

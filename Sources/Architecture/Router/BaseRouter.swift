@@ -8,24 +8,24 @@
 
 import UIKit
 
-class BaseRouter: NSObject {
+open class BaseRouter: NSObject {
     
-    weak var navigation: NavigationProtocol!
+    weak public var navigation: NavigationProtocol!
     
-    init(_ navigation: NavigationProtocol) {
+    public init(_ navigation: NavigationProtocol) {
         self.navigation = navigation
     }
     
-    func back(over: Int = 0, complition: (() -> ())? = nil) {
+    public func back(over: Int = 0, complition: (() -> ())? = nil) {
         removePreviousScreens(over)
         navigation.dismissOrPop(animated: true, complition)
     }
     
-    func open(viewController: UIViewController, removeCurrent: Bool = false, _ completion: (() -> ())? = nil) {
+    public func open(viewController: UIViewController, removeCurrent: Bool = false, _ completion: (() -> ())? = nil) {
         navigation.presentOrPush(viewController: viewController, removeCurrent: removeCurrent, animated: true, completion)
     }
     
-    func removeFromStack(_ position: Int) {
+    public func removeFromStack(_ position: Int) {
         if let topViewController = navigation.topViewController {
             guard let count = topViewController.navigationController?.viewControllers.count, count > position else {
                 return
@@ -34,13 +34,13 @@ class BaseRouter: NSObject {
         }
     }
     
-    func removePreviousScreens(_ count: Int) {
+    public func removePreviousScreens(_ count: Int) {
         for _ in 0..<count {
             removePreviousScreen()
         }
     }
     
-    func removePreviousScreen() {
+    public func removePreviousScreen() {
         guard let topViewController = navigation.topViewController, let count = topViewController.navigationController?.viewControllers.count else {
             return
         }

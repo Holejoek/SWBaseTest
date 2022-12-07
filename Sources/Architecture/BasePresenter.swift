@@ -9,5 +9,5 @@
 import Foundation
 
 open class BasePresenter: NSObject {
-    weak var screenUtilities: (LoaderProtocol & ToastProtocol & DialogProtocol)?
+    weak public var screenUtilities: (LoaderProtocol & ToastProtocol & DialogProtocol)?
 }

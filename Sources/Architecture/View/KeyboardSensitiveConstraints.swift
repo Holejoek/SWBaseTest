@@ -12,7 +12,7 @@ open class KeyboardSensitiveConstraints {
     
     private let keyboardService: KeyboardService = KeyboardService()
     private var view: UIView
-    private var constraints: [NSLayoutConstraint] = []
+    public var constraints: [NSLayoutConstraint] = []
     
     public init(view: UIView) {
         self.view = view

@@ -9,7 +9,7 @@ import UIKit
 
 extension UILabel {
     
-    convenience init(text: String, font: UIFont, textColor: UIColor, textAlignment: NSTextAlignment, numberOfLines: Int) {
+    public convenience init(text: String, font: UIFont, textColor: UIColor, textAlignment: NSTextAlignment, numberOfLines: Int) {
         self.init()
         self.text = text
         self.font = font
@@ -18,7 +18,7 @@ extension UILabel {
         self.numberOfLines = numberOfLines
     }
     
-    convenience init(text: String, fontSize: CGFloat, fontName: String, textColor: UIColor, textAlignment: NSTextAlignment, numberOfLines: Int) {
+    public convenience init(text: String, fontSize: CGFloat, fontName: String, textColor: UIColor, textAlignment: NSTextAlignment, numberOfLines: Int) {
         self.init()
         self.text = text
         self.font = .init(name: fontName, size: fontSize)

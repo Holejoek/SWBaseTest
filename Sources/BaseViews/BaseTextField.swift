@@ -19,20 +19,20 @@ open class BaseTextField: UITextField {
         onTextChanged?(self, text ?? "")
     }
     
-    var textFieldDidBeginEditing: ((BaseTextField, String) -> ())?
-    var textFieldDidEndEditing: ((BaseTextField, String) -> ())?
-    var textFieldDidChangeSelection: ((BaseTextField, String) -> ())?
+    public var textFieldDidBeginEditing: ((BaseTextField, String) -> ())?
+    public var textFieldDidEndEditing: ((BaseTextField, String) -> ())?
+    public var textFieldDidChangeSelection: ((BaseTextField, String) -> ())?
     
-    var limitOfSymbols: ((Int) -> Bool)?//пока не реализовано
+    public var limitOfSymbols: ((Int) -> Bool)?//пока не реализовано
     
-    var nextTextField: UITextField?
-    var onNextTextField: ((UITextField, UITextField, String) -> ())?
-    var onReturn: (() -> ())?
-    var onShouldChangeCharactersIn: ((UITextField, NSRange, String) -> Bool)?
-    var textFieldShouldEndEditing: ((UITextField) -> Bool)?
-    var onDeleteBackward: (() -> ())?
+    public var nextTextField: UITextField?
+    public var onNextTextField: ((UITextField, UITextField, String) -> ())?
+    public var onReturn: (() -> ())?
+    public var onShouldChangeCharactersIn: ((UITextField, NSRange, String) -> Bool)?
+    public var textFieldShouldEndEditing: ((UITextField) -> Bool)?
+    public var onDeleteBackward: (() -> ())?
     
-    override init(frame: CGRect = CGRect.zero){
+    override public init(frame: CGRect = CGRect.zero){
         super.init(frame: frame)
         delegate = self
     }
@@ -83,11 +83,11 @@ extension BaseTextField: UITextFieldDelegate {
         return onShouldChangeCharactersIn?(textField, range, string) ?? true
     }
     
-    func removeButtonOnKeyboard() {
+    public func removeButtonOnKeyboard() {
         inputAccessoryView = nil
     }
 
-    func addDoneButtonOnKeyboard() {
+    public func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         doneToolbar.barTintColor = .blue
         doneToolbar.isTranslucent = false

@@ -9,5 +9,5 @@
 import Foundation
 
 open class BaseInteractor<Data>: NSObject {
-    var data: Data!
+    open var data: Data!
 }

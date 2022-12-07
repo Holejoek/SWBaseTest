@@ -9,7 +9,7 @@ import UIKit
 
 open class BaseCollectionCell: UICollectionViewCell {
     
-    override init(frame: CGRect = .zero) {
+    override public init(frame: CGRect = .zero) {
         super.init(frame: frame)
     }
     

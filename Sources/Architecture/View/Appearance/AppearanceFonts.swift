@@ -21,4 +21,8 @@ public struct AppearanceFonts {
 
 open class BaseFont: BaseFontProtocol {
     public var name: String = UIFont.systemFont(ofSize: 15, weight: .regular).fontName
+    
+    public init() {
+        
+    }
 }

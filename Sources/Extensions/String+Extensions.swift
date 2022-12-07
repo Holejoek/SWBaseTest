@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension String {
+public extension String {
     subscript (_ i: Int) -> Character {
         return self[index(startIndex, offsetBy: i)]
     }
@@ -75,7 +75,7 @@ extension String {
     }
 }
 
-extension Substring {
+public extension Substring {
     subscript (i: Int) -> Character {
         return self[index(startIndex, offsetBy: i)]
     }
@@ -106,7 +106,7 @@ extension Substring {
     
 }
 
-extension String{
+public extension String {
     func toDictionary() -> [String: Any]? {
         if let data = data(using: .utf8) {
             do {
@@ -397,7 +397,7 @@ extension String{
     
 }
 
-extension StringProtocol {
+public extension StringProtocol {
     var firstUppercased: String {
         return prefix(1).uppercased() + dropFirst()
     }

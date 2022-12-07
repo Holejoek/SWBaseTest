@@ -8,7 +8,7 @@
 import UIKit
 
 extension UITextField {
-    convenience init(placeholder: String? = nil, fontSize: CGFloat? = nil, font: UIFont, textColor: UIColor, textAlignment: NSTextAlignment, shadowColor: UIColor? = nil, cornerRadius: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
+    public convenience init(placeholder: String? = nil, fontSize: CGFloat? = nil, font: UIFont, textColor: UIColor, textAlignment: NSTextAlignment, shadowColor: UIColor? = nil, cornerRadius: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
         self.init()
         
         self.layer.borderWidth = borderWidth

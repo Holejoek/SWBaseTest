@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Kingfisher
 
-extension UIImageView {
+public extension UIImageView {
 
     func downloadImage(from url: URL, aspectMode: UIView.ContentMode? = .scaleAspectFill, placeholder: String? = nil, completion: (() -> ())! = {}) {
         

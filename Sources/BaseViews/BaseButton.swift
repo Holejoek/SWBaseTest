@@ -10,7 +10,7 @@ import UIKit
 
 open class BaseButton: UIButton {
     
-    var underline: Bool = false {
+   public var underline: Bool = false {
         didSet {
             let attributedString = NSMutableAttributedString(string:"")
             if underline {
@@ -23,7 +23,7 @@ open class BaseButton: UIButton {
         }
     }
     
-    var onTap: ((BaseButton) -> ())? {
+    public var onTap: ((BaseButton) -> ())? {
         didSet {
             removeTarget(self, action: #selector(onTapHandler), for: .touchUpInside)
             addTarget(self, action: #selector(onTapHandler), for: .touchUpInside)
@@ -31,42 +31,42 @@ open class BaseButton: UIButton {
         }
     }
     
-    var onLongTap: ((BaseButton) -> ())? {
+    public var onLongTap: ((BaseButton) -> ())? {
         didSet {
             removeGestureRecognizer(longPressRecognizer)
             addGestureRecognizer(longPressRecognizer)
         }
     }
     
-    var onLongPressed: ((BaseButton) -> ())? {
+    public var onLongPressed: ((BaseButton) -> ())? {
         didSet {
             removeGestureRecognizer(longPressRecognizer)
             addGestureRecognizer(longPressRecognizer)
         }
     }
     
-    var longPressDuration: CGFloat = 0.5 {
+    public var longPressDuration: CGFloat = 0.5 {
         didSet {
             removeGestureRecognizer(longPressRecognizer)
             addGestureRecognizer(longPressRecognizer)
         }
     }
     
-    lazy var longPressRecognizer: UILongPressGestureRecognizer = {
+    lazy public var longPressRecognizer: UILongPressGestureRecognizer = {
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPressedHandler))
         longPressRecognizer.minimumPressDuration = Double(longPressDuration)
         return longPressRecognizer
     }()
     
-    @objc final func onTapHandler() {
+    @objc private func onTapHandler() {
         onTap?(self)
     }
     
-    @objc final func onLongTapHandler() {
+    @objc private func onLongTapHandler() {
         onLongTap?(self)
     }
     
-    @objc final func onLongPressedHandler() {
+    @objc private func onLongPressedHandler() {
         if longPressRecognizer.state == .ended {
             onLongTap?(self)
         }
@@ -76,7 +76,7 @@ open class BaseButton: UIButton {
         }
     }
     
-    var text: String {
+    public var text: String {
         set { setTitle(newValue, for: .normal) }
         get { return title(for: .normal) ?? "" }
     }

@@ -9,14 +9,14 @@ import UIKit
 
 open class BaseCollectionView: UICollectionView {
     
-    var isAutoDimensionHeight: Bool = false
+    public var isAutoDimensionHeight: Bool = false
     
-    var sizeForItemAt: ((UICollectionView, UICollectionViewLayout, IndexPath) -> CGSize)?
-    var numberOfItemsInSection: ((UICollectionView, Int) -> Int)?
-    var cellForItemAt: ((UICollectionView, IndexPath) -> UICollectionViewCell)?
-    var willDisplay: [(UICollectionView, UICollectionViewCell, IndexPath) -> ()] = []
-    var didSelectItemAt: ((BaseCollectionView, IndexPath) -> ())?
-    var insetForSection: ((UICollectionView, UICollectionViewLayout, Int)  -> UIEdgeInsets)?
+    public var sizeForItemAt: ((UICollectionView, UICollectionViewLayout, IndexPath) -> CGSize)?
+    public var numberOfItemsInSection: ((UICollectionView, Int) -> Int)?
+    public var cellForItemAt: ((UICollectionView, IndexPath) -> UICollectionViewCell)?
+    public var willDisplay: [(UICollectionView, UICollectionViewCell, IndexPath) -> ()] = []
+    public var didSelectItemAt: ((BaseCollectionView, IndexPath) -> ())?
+    public var insetForSection: ((UICollectionView, UICollectionViewLayout, Int)  -> UIEdgeInsets)?
     
     open override var contentSize: CGSize {
         didSet {

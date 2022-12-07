@@ -22,17 +22,17 @@ open class CollectionWithPagination<PaginationData: Decodable>: BaseCollectionVi
     
     private var paginationManagerDelegate: PaginationManagerDelegate!
     
-    var data: [PaginationData] = [] {
+    public var data: [PaginationData] = [] {
         didSet {
             reloadData()
         }
     }
     
-    var cellForItemAtWithData: ((BaseCollectionView, IndexPath, PaginationData) -> UICollectionViewCell)?
+    public var cellForItemAtWithData: ((BaseCollectionView, IndexPath, PaginationData) -> UICollectionViewCell)?
     
-    var sizeForItemAtWithData: ((BaseCollectionView, UICollectionViewLayout, IndexPath, PaginationData) -> CGSize)?
+    public var sizeForItemAtWithData: ((BaseCollectionView, UICollectionViewLayout, IndexPath, PaginationData) -> CGSize)?
     
-    func setup() {
+    open func setup() {
         numberOfItemsInSection = {
             [weak self] _, _ in
             guard let self = self else { return 0 }

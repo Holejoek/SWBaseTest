@@ -10,7 +10,7 @@ import Foundation
 
 public class PlistManager<T: Decodable> {
     
-    private var plistData: Data {
+    public var plistData: Data {
         let url = Bundle.main.url(forResource: "iOSDepartment/info", withExtension: "plist")!
         return try! Data(contentsOf: url)
     }
