@@ -10,7 +10,7 @@ import UIKit
 
 open class BaseViewController: UIViewController, BaseViewInput, NavigationProtocol, LoaderProtocol, ToastProtocol, DialogProtocol{
     
-    internal weak var loader: LoaderViewProtocol?
+    public weak var loader: LoaderViewProtocol?
     
     var firstTime: Bool = true
     var keyboardSensitiveConstraints: KeyboardSensitiveConstraints!

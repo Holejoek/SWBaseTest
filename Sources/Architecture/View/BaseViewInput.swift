@@ -8,4 +8,4 @@
 
 import Foundation
 
-protocol BaseViewInput: NSObject {}
+public protocol BaseViewInput: NSObject {}

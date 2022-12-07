@@ -9,14 +9,21 @@
 import Foundation
 import KeychainAccess
 
+
+public protocol StorageManagerKeys {
+    var rawValue: String { get }
+}
+
+
+
 extension StorageManager {
     
-    enum Key: String {
+    public enum Key: String, StorageManagerKeys {
         case token
         case refreshToken
     }
     
-    var token: String {
+    public var token: String {
         set {
             set(newValue, for: Key.token)
         }
@@ -25,7 +32,7 @@ extension StorageManager {
         }
     }
     
-    var refreshToken: String {
+    public var refreshToken: String {
         set {
             set(newValue, for: Key.refreshToken)
         }
@@ -35,7 +42,7 @@ extension StorageManager {
     }
 }
 
-final class StorageManager {
+final public class StorageManager {
     
     private static var uniqueInstance: StorageManager?
     
@@ -57,7 +64,7 @@ final class StorageManager {
             .accessibility(.whenUnlockedThisDeviceOnly)
     }
     
-    private func set<T: Encodable>(_ value: T?, for key: Key) {
+    private func set<T: Encodable>(_ value: T?, for key: StorageManagerKeys) {
         guard let value = value else {
             delete(for: key)
             return
@@ -70,7 +77,7 @@ final class StorageManager {
         }
     }
     
-    private func get<T: Decodable>(for key: Key) -> T? {
+    private func get<T: Decodable>(for key: StorageManagerKeys) -> T? {
         do {
             guard let data = try keychain.getData(key.rawValue) else { return nil }
             return try JSONDecoder().decode(T.self, from: data)
@@ -80,12 +87,13 @@ final class StorageManager {
         }
     }
     
-    private func delete(for key: Key) {
+    private func delete(for key: StorageManagerKeys) {
         do {
             try keychain.remove(key.rawValue)
         } catch let error {
             print(error.localizedDescription)
         }
     }
-    
 }
+
+

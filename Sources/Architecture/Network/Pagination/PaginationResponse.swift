@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PaginationResponse<ResponseData: Decodable>: Decodable {
+open class PaginationResponse<ResponseData: Decodable>: Decodable {
     var data: [ResponseData]
     var total: Int
 }

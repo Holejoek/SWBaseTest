@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol PaginationManagerDelegate {
+public protocol PaginationManagerDelegate {
     func refresh()
 }
 
-class PaginationManager<Request: PaginationRequest, Response: PaginationResponse<Data>, Data: Decodable> {
+open class PaginationManager<Request: PaginationRequest, Response: PaginationResponse<Data>, Data: Decodable> {
     
     private var collectionViewDelegate: CollectionWithPaginationDelegate
     
@@ -36,12 +36,12 @@ class PaginationManager<Request: PaginationRequest, Response: PaginationResponse
     }
     
     private var method: BaseTarget<Request, Response>
-    var request: Request {
+    open var request: Request {
         get { return method.model.requestData }
         set { method.model.requestData = newValue }
     }
     
-    init(method: BaseTarget<Request, Response>, collectionView: CollectionWithPagination<Data>, nextPageOnWillDisplay: Bool = true, nextPageOffsetPosition: Int = 1) {
+    public init(method: BaseTarget<Request, Response>, collectionView: CollectionWithPagination<Data>, nextPageOnWillDisplay: Bool = true, nextPageOffsetPosition: Int = 1) {
         
         self.method = method
         self.nextPageOffsetPosition = nextPageOffsetPosition
@@ -83,12 +83,12 @@ class PaginationManager<Request: PaginationRequest, Response: PaginationResponse
         }
     }
     
-    func firstPage() {
+    open func firstPage() {
         offset = 0
         nextPage(needRefresh: true)
     }
     
-    func nextPage(needRefresh: Bool = false) {
+    open func nextPage(needRefresh: Bool = false) {
         if inProcess { return }
         
         if let total = total, offset >= total {
@@ -103,7 +103,7 @@ class PaginationManager<Request: PaginationRequest, Response: PaginationResponse
 }
 
 extension PaginationManager: PaginationManagerDelegate {
-    func refresh() {
+    public func refresh() {
         firstPage()
     }
 }

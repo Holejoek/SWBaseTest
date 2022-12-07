@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol BaseInteractorOutput: NSObject {
+public protocol BaseInteractorOutput: NSObject {
     var screenUtilities: (LoaderProtocol & ToastProtocol & DialogProtocol)? { get }
 }

@@ -8,26 +8,26 @@
 
 import Foundation
 
-class PlistManager<T: Decodable> {
+public class PlistManager<T: Decodable> {
     
     private var plistData: Data {
         let url = Bundle.main.url(forResource: "iOSDepartment/info", withExtension: "plist")!
         return try! Data(contentsOf: url)
     }
     
-    var value: T {
+    public var value: T {
         return try! PropertyListDecoder().decode(T.self, from: plistData)
     }
 }
 
-struct BaseURL: Decodable {
+public struct BaseURL: Decodable {
     private enum CodingKeys: String, CodingKey {
         case value = "BASE_URL"
     }
 
-    let value: String
+    public let value: String
     
-    var url: URL {
+    public var url: URL {
         return value.url!
     }
 }

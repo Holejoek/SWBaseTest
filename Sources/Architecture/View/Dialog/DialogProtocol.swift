@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol DialogProtocol: NSObject {
+public protocol DialogProtocol: NSObject {
     func showOkDialog(message: String, onOkTap: (()->())?)
     func showYesNoDialog(message: String, onYesTap: (()->())?, onNoTap: (()->())?)
 }
  extension DialogProtocol where Self: BaseViewController {
     
-     func showOkDialog(message: String, onOkTap: (()->())?) {
+    public func showOkDialog(message: String, onOkTap: (()->())?) {
         guard !view.isHidden && view.window != nil else {
             return
         }
@@ -57,7 +57,7 @@ protocol DialogProtocol: NSObject {
         }
         
     }
-    func showYesNoDialog(message: String, onYesTap: (()->())?, onNoTap: (()->())?){
+    public func showYesNoDialog(message: String, onYesTap: (()->())?, onNoTap: (()->())?){
         guard !view.isHidden && view.window != nil else {
             return
         }

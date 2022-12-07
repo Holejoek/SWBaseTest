@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol ToastProtocol: NSObject {
+public protocol ToastProtocol: NSObject {
     func showToast(_ message: String)
 }
 
 extension ToastProtocol where Self: BaseViewController {
     
-    func showToast(_ message: String) {
+    public func showToast(_ message: String) {
         print("showToast \(message)")
     }
     

@@ -8,4 +8,4 @@
 
 import Foundation
 
-protocol BaseViewOutput: NSObject {}
+public protocol BaseViewOutput: NSObject {}

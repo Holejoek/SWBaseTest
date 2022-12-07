@@ -8,10 +8,11 @@
 
 import UIKit
 
-protocol NavigationProtocol: NSObject {
+public protocol NavigationProtocol: NSObject {
     var topViewController: UIViewController? { get }
     func presentOrPush(viewController: UIViewController, removeCurrent: Bool, animated: Bool, _ completion: (() -> ())?)
     func dismissOrPop(animated: Bool, _ completion: (() -> ())?)
+    func removeFromStack(_ position: Int)
     func presentModal(viewController: UIViewController, animated: Bool, _ completion: (() -> ())?)
 }
 
@@ -26,7 +27,7 @@ protocol NavigationProtocol: NSObject {
             .filter({$0.isKeyWindow}).first
     }
     
-    var topViewController: UIViewController? {
+     public var topViewController: UIViewController? {
         return topViewController()
     }
     
@@ -45,7 +46,7 @@ protocol NavigationProtocol: NSObject {
         return controller
     }
     
-    func dismissOrPop(animated: Bool = true, _ completion: (() -> ())? = nil){
+    public func dismissOrPop(animated: Bool = true, _ completion: (() -> ())? = nil){
         if let topVc = topViewController() {
             if topVc.isModal{
                 topVc.dismiss(animated: animated, completion: completion)
@@ -55,7 +56,7 @@ protocol NavigationProtocol: NSObject {
         }
     }
     
-    func presentOrPush(viewController: UIViewController, removeCurrent: Bool = false, animated: Bool = true, _ completion: (() -> ())? = nil){
+     public func presentOrPush(viewController: UIViewController, removeCurrent: Bool = false, animated: Bool = true, _ completion: (() -> ())? = nil){
         if let topViewController = topViewController() {
             if topViewController.isModal{
                 topViewController.present(viewController, animated: animated, completion: completion)
@@ -67,7 +68,7 @@ protocol NavigationProtocol: NSObject {
         }
     }
     
-    func removeFromStack(_ position: Int) {
+     public  func removeFromStack(_ position: Int) {
         if let topViewController = topViewController() {
             guard let count = topViewController.navigationController?.viewControllers.count, count > position else {
                 return
@@ -76,7 +77,7 @@ protocol NavigationProtocol: NSObject {
         }
     }
     
-    func presentModal(viewController: UIViewController, animated: Bool = true, _ completion: (() -> ())? = nil){
+     public func presentModal(viewController: UIViewController, animated: Bool = true, _ completion: (() -> ())? = nil){
         if let topViewController = topViewController() {
             topViewController.present(viewController, animated: animated, completion: completion)
         }

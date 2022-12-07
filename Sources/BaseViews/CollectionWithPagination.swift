@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CollectionWithPaginationDelegate {
+public protocol CollectionWithPaginationDelegate {
     func reloadData()
     func setPaginationManagerDelegate(delegate: PaginationManagerDelegate)
     func setWillDisplayLogic(_ willDisplayLogic: @escaping (UICollectionView, UICollectionViewCell, IndexPath) -> ())
@@ -61,27 +61,27 @@ open class CollectionWithPagination<PaginationData: Decodable>: BaseCollectionVi
 
 extension CollectionWithPagination: CollectionWithPaginationDelegate {
     
-    func setPaginationManagerDelegate(delegate: PaginationManagerDelegate) {
+    public func setPaginationManagerDelegate(delegate: PaginationManagerDelegate) {
         paginationManagerDelegate = delegate
     }
     
-    func setWillDisplayLogic(_ willDisplayLogic: @escaping (UICollectionView, UICollectionViewCell, IndexPath) -> ()) {
+    public func setWillDisplayLogic(_ willDisplayLogic: @escaping (UICollectionView, UICollectionViewCell, IndexPath) -> ()) {
         willDisplay.append(willDisplayLogic)
     }
     
-    func endRefreshing() {
+    public func endRefreshing() {
         refreshControl?.endRefreshing()
     }
     
-    func setData(_ newData: [Decodable]) {
+    public func setData(_ newData: [Decodable]) {
         self.data = newData as? [PaginationData] ?? []
     }
     
-    func appendData(_ newData: [Decodable]) {
+    public func appendData(_ newData: [Decodable]) {
         self.data.append(contentsOf: newData as? [PaginationData] ?? [])
     }
     
-    func getData() -> [Decodable] {
+    public func getData() -> [Decodable] {
         return data
     }
 }

@@ -8,16 +8,16 @@
 
 import Foundation
 
-class PaginationRequest: Encodable {
+open class PaginationRequest: Encodable {
     var limit: Int = 0
     var offset: Int = 0
     
-    init(limit: Int, offset: Int) {
+    public init(limit: Int, offset: Int) {
         self.limit = limit
         self.offset = offset
     }
     
-    func clear() {
+    open func clear() {
         offset = 0
     }
 }

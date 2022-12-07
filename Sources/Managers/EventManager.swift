@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EventManager {
+open class EventManager {
     public static var events: [EMEvent] = []
     
     public static func reactionBy(eventId: EMEventId, subject: EMSubject) {
@@ -42,16 +42,16 @@ class EventManager {
     }
 }
 
-class EMEvent {
+open class EMEvent {
     public var id: EMEventId?
     public var subjects: [EMSubject]
     
-    init(id: EMEventId) {
+    public init(id: EMEventId) {
         self.id = id
         self.subjects = []
     }
     
-    init(id: EMEventId, subjects: [EMSubject]) {
+    public init(id: EMEventId, subjects: [EMSubject]) {
         self.id = id
         self.subjects = subjects
     }
@@ -65,7 +65,7 @@ class EMEvent {
     }
 }
 
-class EMSubject {
+open class EMSubject {
     private static var subjectCount: Int64 = 0
     private static let autoIdPrefix:String = "RealReactiveSubject"
     
@@ -84,6 +84,6 @@ class EMSubject {
     }
 }
 
-enum EMEventId {
+public enum EMEventId {
     case logout
 }

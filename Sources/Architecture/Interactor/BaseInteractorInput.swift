@@ -8,4 +8,4 @@
 
 import Foundation
 
-protocol BaseInteractorInput: NSObject {}
+public protocol BaseInteractorInput: NSObject {}

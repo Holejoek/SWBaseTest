@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol LoaderViewProtocol: AnyObject {
+public protocol LoaderViewProtocol: AnyObject {
     var view: UIView! { get }
     
     func startAnimation()

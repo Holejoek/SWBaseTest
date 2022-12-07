@@ -10,7 +10,7 @@ import Moya
 
 public struct EmptyRequest: Encodable {}
 
-protocol MultipartRequest {
+public protocol MultipartRequest {
     var multipartData: [MultipartFormData] { get }
 }
 

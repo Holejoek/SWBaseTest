@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol LoaderProtocol: AnyObject {
+public protocol LoaderProtocol: AnyObject {
     var loader: LoaderViewProtocol? { get }
     func loader(_ show: Bool)
 }
 
 extension LoaderProtocol where Self: BaseViewController {
     
-    func loader(_ show: Bool) {
+    public func loader(_ show: Bool) {
         guard let loader = loader else { return }
         if show { loader.showLoader(self.view) } else { loader.hideLoader(self.view) }
     }
