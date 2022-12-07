@@ -64,7 +64,7 @@ final public class StorageManager {
             .accessibility(.whenUnlockedThisDeviceOnly)
     }
     
-    private func set<T: Encodable>(_ value: T?, for key: StorageManagerKeys) {
+    public func set<T: Encodable>(_ value: T?, for key: StorageManagerKeys) {
         guard let value = value else {
             delete(for: key)
             return
@@ -77,7 +77,7 @@ final public class StorageManager {
         }
     }
     
-    private func get<T: Decodable>(for key: StorageManagerKeys) -> T? {
+    public func get<T: Decodable>(for key: StorageManagerKeys) -> T? {
         do {
             guard let data = try keychain.getData(key.rawValue) else { return nil }
             return try JSONDecoder().decode(T.self, from: data)
@@ -87,7 +87,7 @@ final public class StorageManager {
         }
     }
     
-    private func delete(for key: StorageManagerKeys) {
+    public func delete(for key: StorageManagerKeys) {
         do {
             try keychain.remove(key.rawValue)
         } catch let error {
