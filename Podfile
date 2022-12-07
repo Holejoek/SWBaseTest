@@ -6,8 +6,8 @@ target 'SWBaseTest' do
   use_frameworks!
 
   # Pods for SWBaseTest
-  pod 'Moya', '~> 13.0'
-  pod 'SnapKit', '~> 5.0.0'
+  pod 'Moya'
+  pod 'SnapKit'
   pod 'KeychainAccess'
   pod 'Kingfisher'
 

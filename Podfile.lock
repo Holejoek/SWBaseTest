@@ -1,20 +1,18 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Alamofire (5.6.4)
   - KeychainAccess (4.2.2)
   - Kingfisher (7.4.1)
-  - Moya (13.0.1):
-    - Moya/Core (= 13.0.1)
-  - Moya/Core (13.0.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
-  - Result (4.1.0)
-  - SnapKit (5.0.1)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - SnapKit (5.6.0)
 
 DEPENDENCIES:
   - KeychainAccess
   - Kingfisher
-  - Moya (~> 13.0)
-  - SnapKit (~> 5.0.0)
+  - Moya
+  - SnapKit
 
 SPEC REPOS:
   trunk:
@@ -22,17 +20,15 @@ SPEC REPOS:
     - KeychainAccess
     - Kingfisher
     - Moya
-    - Result
     - SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: b621073a011775087a516b18274b32bde5b5c097
+PODFILE CHECKSUM: e0d018e5766d146006f78c8e110c4377a22c9791
 
 COCOAPODS: 1.11.3
